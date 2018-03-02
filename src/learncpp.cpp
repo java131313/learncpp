@@ -11,6 +11,7 @@
 using namespace std;
 union TEST{
 	short a;
+
 	char b[sizeof(short)];
 };
 
@@ -22,7 +23,7 @@ int main() {
 	}else if( test.b[0] == 0x02 && test.b[1] == 0x01 ){
 		cout << "small endian." << endl;
 	}else{
-		cout << "unknown" << endl;
+		cout << "unknown" << endl;;
 	}
 	return 0;
 }
