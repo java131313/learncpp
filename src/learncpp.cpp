@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include<string.h>
+#include <time.h>
+#include <stdio.h>
 using namespace std;
 union TEST{
 	short a;
@@ -17,15 +19,23 @@ union TEST{
 
 int main() {
 
-	//我要学习cpp
-	TEST test;
-	test.a = 0x0102;
-	if( test.b[0] == 0x01&&test.b[1] == 0x02){
-		cout<< "big endian." << endl;
-	}else if( test.b[0] == 0x02 && test.b[1] == 0x01 ){
-		cout << "small endian." << endl;
-	}else{
-		cout << "unknown" << endl;;
-	}
-	return 0;
+	 clock_t start_t, end_t;
+	   double total_t;
+	   int i;
+
+	   start_t = clock();
+	   printf("程序启动，start_t = %ld\n", start_t);
+
+	   printf("开始一个大循环，start_t = %ld\n", start_t);
+	   for(i=0; i< 10000000; i++)
+	   {
+	   }
+	   end_t = clock();
+	   printf("大循环结束，end_t = %ld\n", end_t);
+
+	   total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+	   printf("CPU 占用的总时间：%f\n", total_t  );
+	   printf("程序退出...\n");
+
+	   return(0);
 }
