@@ -16,6 +16,8 @@ union TEST{
 };
 
 int main() {
+
+	//我要学习cpp
 	TEST test;
 	test.a = 0x0102;
 	if( test.b[0] == 0x01&&test.b[1] == 0x02){
